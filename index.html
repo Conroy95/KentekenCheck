@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSINT Vehicle Lookup</title>
+    <!-- CSS stylesheet link -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>OSINT <span class="accent-text">VEHICLE LOOKUP</span></h1>
+            <p class="subtitle">// Kenteken- en voertuiganalytica</p>
+        </header>
+
+        <main>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Voer kenteken in (bijv. AB-12-CD)..." autocomplete="off">
+                <button id="searchBtn">SCAN</button>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Kentekenregister raadplegen...</p>
+            </div>
+
+            <div id="resultCard" class="card hidden">
+                <div class="card-header">
+                    <h2>Voertuig Gevonden</h2>
+                    <span id="resPlate" class="badge">--</span>
+                </div>
+                <div class="card-body">
+                    <div class="info-row">
+                        <span class="label">Merk & Model:</span>
+                        <span id="resModel" class="value">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Inrichting:</span>
+                        <span id="resType" class="value">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Brandstof:</span>
+                        <span id="resFuel" class="value">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Vervaldatum APK:</span>
+                        <span id="resApk" class="value">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Status:</span>
+                        <span id="resStatus" class="value">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="errorCard" class="card error hidden">
+                <p id="errorText">Geen voertuig gevonden bij dit kenteken.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 OSINT Dashboard - Secure Client</p>
+        </footer>
+    </div>
+
+    <!-- JS script link -->
+    <script src="js/script.js"></script>
+</body>
+</html>
